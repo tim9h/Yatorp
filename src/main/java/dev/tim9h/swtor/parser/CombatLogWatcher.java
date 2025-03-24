@@ -62,7 +62,9 @@ public class CombatLogWatcher {
 	public void stopWatching() {
 		LOGGER.debug(() -> "Shutting down combatlog watcher");
 		try {
-			monitor.stop();
+			if (monitor != null) {
+				monitor.stop();
+			}
 			listener.stop();
 		} catch (Exception e) {
 			LOGGER.warn(() -> "Unable to stop combatlog monitor");
