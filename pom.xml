@@ -30,6 +30,20 @@
 				<version>3.5.2</version>
 			</plugin>
 
+			<plugin>
+				<groupId>software.xdev</groupId>
+				<artifactId>music-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>music</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
