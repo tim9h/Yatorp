@@ -33,7 +33,7 @@
 			<plugin>
 				<groupId>software.xdev</groupId>
 				<artifactId>music-maven-plugin</artifactId>
-				<version>1.0.2</version>
+				<version>1.0.3</version>
 				<executions>
 					<execution>
 						<phase>validate</phase>
