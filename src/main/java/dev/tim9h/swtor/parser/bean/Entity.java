@@ -3,6 +3,7 @@ package dev.tim9h.swtor.parser.bean;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -49,7 +50,7 @@ public class Entity {
 	public Entity(String entity) {
 		if (StringUtils.isBlank(entity)) {
 			empty = true;
-		} else if (StringUtils.equals(entity, "=")) {
+		} else if (Strings.CS.equals(entity, "=")) {
 			equals = true;
 		} else {
 			var matcher = PATTERN_PLAYER.matcher(entity);

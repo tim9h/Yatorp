@@ -1,5 +1,6 @@
 package dev.tim9h.swtor.parser;
 
+import java.io.IOException;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.util.function.Consumer;
@@ -36,12 +37,12 @@ public class CombatLogWatcher {
 		try {
 			var path = getCombatlogsPath();
 			LOGGER.debug(() -> "Starting combatlog watcher");
-			var observer = new FileAlterationObserver(path.toFile());
+			var observer = FileAlterationObserver.builder().setPath(path).get();
 			observer.addListener(listener);
 			monitor = new FileAlterationMonitor(100);
 			monitor.addObserver(observer);
 			startMonitor();
-		} catch (InvalidPathException e) {
+		} catch (InvalidPathException | IOException e) {
 			LOGGER.warn(() -> "Unable to start combatlog watcher: Combatlog directory not found");
 		}
 	}

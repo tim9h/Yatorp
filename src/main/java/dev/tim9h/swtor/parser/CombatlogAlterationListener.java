@@ -8,7 +8,7 @@ import java.nio.file.NoSuchFileException;
 import java.util.function.Consumer;
 
 import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,7 +53,7 @@ class CombatlogAlterationListener extends FileAlterationListenerAdaptor {
 		if (currentFile == null) {
 			currentFile = file;
 			LOGGER.debug(() -> "Parsing started");
-		} else if (!StringUtils.equals(currentFile.toString(), file.toString())) {
+		} else if (!Strings.CS.equals(currentFile.toString(), file.toString())) {
 			currentFile = file;
 			linecount = 0;
 			LOGGER.debug(() -> "New combatlog started: " + file.toString());
