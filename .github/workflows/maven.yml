@@ -30,10 +30,10 @@ jobs:
           server-id: github
 
       - name: Build and test
-        run: mvn -B verify
+        run: mvn -B -s .mvn/settings.xml verify
 
       - name: Publish to GitHub Packages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        run: mvn -B deploy
+        run: mvn -B -s .mvn/settings.xml deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
