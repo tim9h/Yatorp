@@ -5,7 +5,7 @@
 
 	<groupId>dev.tim9h</groupId>
 	<artifactId>swtor.parser</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>YATORP</name>
 	<description>Yet another ToR parser</description>
 
